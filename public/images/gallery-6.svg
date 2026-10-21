@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" fill="none">
+  <defs>
+    <radialGradient id="g6Grad" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#1E1E28"/>
+      <stop offset="100%" stop-color="#09090B"/>
+    </radialGradient>
+  </defs>
+  <rect width="600" height="600" fill="url(#g6Grad)"/>
+  <rect x="15" y="15" width="570" height="570" rx="12" stroke="#262633" stroke-width="1"/>
+  
+  <g transform="translate(300, 260)">
+    <circle cx="0" cy="0" r="80" fill="#14141C" stroke="#D4AF37" stroke-width="1.5" stroke-opacity="0.4"/>
+    <!-- Smiling icon visual -->
+    <circle cx="-25" cy="-15" r="7" fill="#D4AF37"/>
+    <circle cx="25" cy="-15" r="7" fill="#D4AF37"/>
+    <path d="M-30 15 Q0 50 30 15" stroke="#D4AF37" stroke-width="4" stroke-linecap="round" fill="none"/>
+  </g>
+
+  <rect x="40" y="450" width="520" height="90" rx="8" fill="#111116" fill-opacity="0.9" stroke="#262633"/>
+  <text x="60" y="490" font-family="'Cinzel', serif" font-size="20" font-weight="600" fill="#FFF">CANDID MOMENTS</text>
+  <text x="60" y="518" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" fill="#8E8EA0">Pure laughter and desi warmth • Everyday life</text>
+</svg>

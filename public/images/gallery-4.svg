@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" fill="none">
+  <defs>
+    <radialGradient id="g4Grad" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#192024"/>
+      <stop offset="100%" stop-color="#09090B"/>
+    </radialGradient>
+  </defs>
+  <rect width="600" height="800" fill="url(#g4Grad)"/>
+  <rect x="15" y="15" width="570" height="770" rx="12" stroke="#262633" stroke-width="1"/>
+  
+  <g transform="translate(300, 340)">
+    <circle cx="0" cy="0" r="90" fill="#14141C" stroke="#D4AF37" stroke-width="1.5" stroke-opacity="0.4"/>
+    <!-- Script / Quill icon -->
+    <path d="M-25 25 L25 -25 L10 -40 L-40 10 Z" fill="#D4AF37"/>
+    <path d="M-40 10 L-45 35 L-20 30 Z" fill="#F5E6AB"/>
+  </g>
+
+  <rect x="40" y="620" width="520" height="120" rx="8" fill="#111116" fill-opacity="0.9" stroke="#262633"/>
+  <text x="60" y="665" font-family="'Cinzel', serif" font-size="20" font-weight="600" fill="#FFF">WRITING &amp; DIALOGUE</text>
+  <text x="60" y="700" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" fill="#8E8EA0">Character workshop • Desi idioms and storytelling</text>
+</svg>

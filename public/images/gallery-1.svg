@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" fill="none">
+  <defs>
+    <radialGradient id="g1Grad" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#221F17"/>
+      <stop offset="100%" stop-color="#09090B"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5E6AB"/>
+      <stop offset="100%" stop-color="#D4AF37"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="800" fill="url(#g1Grad)"/>
+  <rect x="15" y="15" width="570" height="770" rx="12" stroke="#262633" stroke-width="1"/>
+  
+  <circle cx="300" cy="350" r="140" fill="#15141C" stroke="url(#gold)" stroke-width="1.5" stroke-opacity="0.5"/>
+  <text x="300" y="365" text-anchor="middle" font-family="'Cinzel', serif" font-size="40" font-weight="700" fill="url(#gold)">JA</text>
+  
+  <rect x="40" y="620" width="520" height="120" rx="8" fill="#111116" fill-opacity="0.9" stroke="#262633"/>
+  <text x="60" y="665" font-family="'Cinzel', serif" font-size="20" font-weight="600" fill="#FFF">PORTRAITS</text>
+  <text x="60" y="700" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" fill="#8E8EA0">Cinematic creator portrait session • Editorial light</text>
+</svg>

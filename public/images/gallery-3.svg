@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" fill="none">
+  <defs>
+    <radialGradient id="g3Grad" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#241E26"/>
+      <stop offset="100%" stop-color="#09090B"/>
+    </radialGradient>
+  </defs>
+  <rect width="600" height="600" fill="url(#g3Grad)"/>
+  <rect x="15" y="15" width="570" height="570" rx="12" stroke="#262633" stroke-width="1"/>
+  
+  <circle cx="300" cy="260" r="80" fill="#14141C" stroke="#D4AF37" stroke-width="1.5" stroke-opacity="0.4"/>
+  <!-- Microphone Visual -->
+  <path d="M290 230 C290 215 310 215 310 230 V260 C310 275 290 275 290 260 Z" fill="#D4AF37"/>
+  <path d="M280 250 C280 285 320 285 320 250" stroke="#D4AF37" stroke-width="3" fill="none"/>
+  <path d="M300 285 V310 M285 310 H315" stroke="#D4AF37" stroke-width="3"/>
+
+  <rect x="40" y="450" width="520" height="90" rx="8" fill="#111116" fill-opacity="0.9" stroke="#262633"/>
+  <text x="60" y="490" font-family="'Cinzel', serif" font-size="20" font-weight="600" fill="#FFF">LIVE &amp; EVENTS</text>
+  <text x="60" y="518" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" fill="#8E8EA0">College festivals &amp; stage appearances • Spreading laughter</text>
+</svg>

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <radialGradient id="ogGlow" cx="70%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#2A2416"/>
+      <stop offset="60%" stop-color="#121216"/>
+      <stop offset="100%" stop-color="#09090B"/>
+    </radialGradient>
+    <linearGradient id="ogGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="40%" stop-color="#F5E6AB"/>
+      <stop offset="80%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#9C7C1D"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#ogGlow)"/>
+  <rect x="25" y="25" width="1150" height="580" rx="16" stroke="#262633" stroke-width="1.5"/>
+
+  <!-- Left Content -->
+  <g transform="translate(100, 160)">
+    <rect x="0" y="0" width="280" height="36" rx="18" fill="#1C1A14" stroke="#D4AF37" stroke-width="1" stroke-opacity="0.4"/>
+    <text x="140" y="23" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#D4AF37" letter-spacing="3">
+      COMEDY • STORIES • ENTERTAINMENT
+    </text>
+
+    <text x="0" y="110" font-family="'Cinzel', serif" font-size="64" font-weight="800" fill="url(#ogGold)" letter-spacing="4">
+      JI ABHISHEK JI
+    </text>
+
+    <text x="0" y="160" font-family="'Plus Jakarta Sans', sans-serif" font-size="28" font-weight="600" fill="#E4E4E7">
+      "From Bihar, With Love."
+    </text>
+
+    <text x="0" y="210" font-family="'Plus Jakarta Sans', sans-serif" font-size="18" fill="#A1A1AA">
+      Official creator website of Abhishek Singh — Relatable desi humor, family stories &amp; vlogs.
+    </text>
+
+    <text x="0" y="280" font-family="'Plus Jakarta Sans', sans-serif" font-size="15" font-weight="600" fill="#D4AF37" letter-spacing="2">
+      @ji_abhishek_ji_ • INSTAGRAM &amp; YOUTUBE
+    </text>
+  </g>
+
+  <!-- Right Logo Badge -->
+  <g transform="translate(860, 210)">
+    <circle cx="100" cy="100" r="100" fill="#13131A" stroke="url(#ogGold)" stroke-width="3"/>
+    <text x="100" y="115" text-anchor="middle" font-family="'Cinzel', serif" font-size="68" font-weight="700" fill="url(#ogGold)">JA</text>
+  </g>
+</svg>
