@@ -61,34 +61,38 @@ export const Home: React.FC = () => {
             {/* Left Editorial Copy */}
             <div className="lg:col-span-7 text-left space-y-6 sm:space-y-8">
               {/* Eyebrow Label */}
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#161620] border border-[#d4af37]/30 shadow-md">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#181822] border border-[#d4af37]/35 shadow-sm">
                 <span className="w-2 h-2 rounded-full bg-[#d4af37] animate-pulse" />
-                <span className="text-xs font-semibold uppercase tracking-widest text-[#f5e6ab]">
+                <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-widest text-[#855806] dark:text-[#f5e6ab]">
                   COMEDY • STORIES • ENTERTAINMENT
                 </span>
               </div>
 
-              {/* Oversized Cinematic Heading */}
-              <div className="space-y-3">
-                <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold font-['Cinzel',serif] tracking-tight leading-[1.08] text-white">
-                  JI ABHISHEK <br />
-                  <span className="text-gold-gradient">JI</span>
+              {/* Oversized Cinematic Heading - All on One Line */}
+              <div className="space-y-3.5">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[2.65rem] xl:text-[3.25rem] font-extrabold font-['Cinzel',serif] tracking-wide leading-tight text-white whitespace-nowrap">
+                  JI ABHISHEK <span className="text-gold-gradient">JI</span>
                 </h1>
-                <p className="text-xl sm:text-2xl font-semibold text-[#f5e6ab] font-['Cinzel',serif] tracking-wide">
-                  "{siteConfig.tagline}"
-                </p>
-                <p className="text-base sm:text-lg font-medium text-[#d4af37] font-['Noto_Sans_Devanagari',sans-serif]">
-                  {siteConfig.supportingHeadline}
-                </p>
+                <div className="space-y-1.5 pt-0.5">
+                  <div className="flex items-center gap-2.5">
+                    <span className="h-[2px] w-6 bg-gradient-to-r from-[#d4af37] to-transparent rounded-full" />
+                    <p className="text-lg sm:text-xl font-bold font-['Cinzel',serif] tracking-wide text-[#855806] dark:text-[#f5e6ab]">
+                      "{siteConfig.tagline}"
+                    </p>
+                  </div>
+                  <p className="text-sm sm:text-base font-medium text-[#b8860b] dark:text-[#d4af37] font-['Noto_Sans_Devanagari',sans-serif] pl-8">
+                    {siteConfig.supportingHeadline}
+                  </p>
+                </div>
               </div>
 
               {/* Supporting Paragraph */}
-              <p className="text-base sm:text-lg text-[#a1a1aa] max-w-xl leading-relaxed">
+              <p className="text-base sm:text-lg text-zinc-600 dark:text-[#a1a1aa] max-w-xl leading-relaxed">
                 {siteConfig.supportingDescription}
               </p>
 
               {/* CTA Buttons */}
-              <div className="flex flex-wrap items-center gap-4 pt-2">
+              <div className="flex flex-wrap items-center gap-4 pt-1">
                 <Link to="/videos">
                   <Button
                     variant="primary"
@@ -109,8 +113,12 @@ export const Home: React.FC = () => {
                   </Button>
                 </Link>
 
-                <Link to="/connect" className="text-xs font-semibold text-[#a1a1aa] hover:text-[#d4af37] transition-colors py-2 px-1">
-                  Connect With Me →
+                <Link
+                  to="/connect"
+                  className="text-xs font-semibold text-zinc-600 dark:text-[#a1a1aa] hover:text-[#d4af37] transition-colors py-2 px-1 flex items-center gap-1 group"
+                >
+                  <span>Connect With Me</span>
+                  <span className="transition-transform group-hover:translate-x-1">→</span>
                 </Link>
               </div>
 
