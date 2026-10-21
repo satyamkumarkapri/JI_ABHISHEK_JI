@@ -172,7 +172,7 @@ export const Home: React.FC = () => {
             <div className="lg:col-span-5">
               <div className="relative rounded-2xl p-1 bg-gradient-to-b from-[#d4af37]/30 to-[#272733]/40 shadow-xl overflow-hidden">
                 <img
-                  src="/images/gallery-1.svg"
+                  src="/images/abhishek-portrait.jpg"
                   alt="Abhishek Singh creative portrait"
                   className="w-full h-auto rounded-xl object-cover"
                 />

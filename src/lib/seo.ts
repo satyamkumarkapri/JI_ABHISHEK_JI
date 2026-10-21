@@ -12,7 +12,7 @@ export function updatePageSEO({
   description,
   canonicalPath = "",
   ogType = "website",
-  ogImage = "/images/og-preview.png",
+  ogImage = "/images/abhishek-portrait.jpg",
   structuredData,
 }: PageSEOProps) {
   const siteUrl = (import.meta.env.VITE_SITE_URL || "https://ji-abhishek-ji.vercel.app").replace(/\/$/, "");

@@ -69,7 +69,7 @@ export const About: React.FC = () => {
           <div className="lg:col-span-5">
             <div className="relative rounded-3xl p-1.5 bg-gradient-to-b from-[#d4af37]/40 via-[#262633] to-[#09090b] shadow-2xl">
               <img
-                src="/images/gallery-1.svg"
+                src="/images/abhishek-portrait.jpg"
                 alt="Abhishek Singh official portrait"
                 className="w-full h-auto rounded-[22px] object-cover"
               />

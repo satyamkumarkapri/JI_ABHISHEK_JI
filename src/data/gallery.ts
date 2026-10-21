@@ -26,14 +26,14 @@ export interface GalleryItem {
 export const galleryItems: GalleryItem[] = [
   {
     id: "gal-1",
-    title: "Cinematic Creator Portrait",
+    title: "Official Creator Portrait — Abhishek Singh",
     category: "Portraits",
-    imageUrl: "/images/gallery-1.svg",
-    altText: "Artistic portrait silhouette representing Abhishek Singh in studio lighting",
-    caption: "Editorial studio shoot capturing the introspective side of comedy.",
+    imageUrl: "/images/abhishek-portrait.jpg",
+    altText: "Abhishek Singh (JI ABHISHEK JI) in black sequined tuxedo and sunglasses",
+    caption: "Official creator portrait of Abhishek Singh (JI ABHISHEK JI).",
     date: "2025",
     aspectRatio: "portrait",
-    isPlaceholder: true,
+    isPlaceholder: false,
   },
   {
     id: "gal-2",

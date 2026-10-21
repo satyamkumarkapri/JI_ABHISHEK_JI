@@ -9,7 +9,7 @@ export interface CreatorPortraitProps {
 }
 
 export const CreatorPortrait: React.FC<CreatorPortraitProps> = ({
-  src = "/images/creator-hero.svg",
+  src = "/images/abhishek-portrait.jpg",
   alt = "Abhishek Singh (JI ABHISHEK JI) — Official Creator Portrait",
   className = "",
   priority = false,
