@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { Heart, ShieldCheck, Mail } from "lucide-react";
 import { Instagram, Youtube } from "../ui/Icons";
 import { siteConfig } from "../../config/site";
-import { ThemeToggle } from "../ui/ThemeToggle";
 import { useTheme } from "../../context/ThemeContext";
 
 const CURRENT_YEAR = new Date().getFullYear();
@@ -235,19 +234,36 @@ export const Footer: React.FC = () => {
 
         {/* Bottom Bar */}
         <div
-          className={`mt-14 pt-8 border-t flex flex-col sm:flex-row items-center justify-between gap-4 text-xs ${
+          className={`mt-14 pt-8 border-t flex flex-col md:flex-row items-center justify-between gap-4 text-xs ${
             theme === "light"
               ? "border-[#ded7c8] text-zinc-600"
               : "border-[#181824] text-[#71717a]"
           }`}
         >
-          <p>© {CURRENT_YEAR} JI ABHISHEK JI (Abhishek Singh). All rights reserved.</p>
-          <div className="flex items-center gap-4">
-            <ThemeToggle showLabel className="text-[11px] px-2.5 py-1" />
-            <p className="flex items-center gap-1">
-              Made with <Heart className="w-3.5 h-3.5 text-rose-500 fill-current" /> From Bihar, For The World.
-            </p>
-          </div>
+          <p className="text-center md:text-left">
+            © {CURRENT_YEAR} JI ABHISHEK JI (Abhishek Singh). All rights reserved.
+          </p>
+
+          <p className="flex items-center gap-1.5 text-xs text-center">
+            <span>Created by</span>
+            <a
+              href="https://satyamkapriportfolio.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`font-semibold tracking-wide transition-all duration-200 hover:underline underline-offset-4 ${
+                theme === "light"
+                  ? "text-[#855806] hover:text-zinc-950 font-bold decoration-[#855806]"
+                  : "text-[#d4af37] hover:text-white decoration-[#d4af37]"
+              }`}
+              title="Visit Satyam Kumar Kapri's Portfolio"
+            >
+              Satyam Kumar Kapri
+            </a>
+          </p>
+
+          <p className="flex items-center gap-1 text-center md:text-right">
+            Made with <Heart className="w-3.5 h-3.5 text-rose-500 fill-current" /> From Bihar, For The World.
+          </p>
         </div>
       </div>
     </footer>
