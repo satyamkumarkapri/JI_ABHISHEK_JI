@@ -374,3 +374,45 @@ html[data-theme="light"] .cinematic-lightbox * {
 html[data-theme="light"] [role="dialog"] [class*="bg-black/"] {
   background-color: rgba(0, 0, 0, 0.92) !important;
 }
+
+/* ==========================================================================
+   Portrait Floating Identity Tag - Guaranteed High Contrast in Light & Dark
+   ========================================================================== */
+html[data-theme="light"] .portrait-tag,
+html.light .portrait-tag {
+  background-color: rgba(255, 255, 255, 0.96) !important;
+  border-color: #ded7c8 !important;
+  box-shadow: 0 10px 25px -4px rgba(0, 0, 0, 0.15) !important;
+}
+
+html[data-theme="light"] .portrait-tag .creator-name,
+html.light .portrait-tag .creator-name {
+  color: #111114 !important;
+  font-weight: 700 !important;
+}
+
+html[data-theme="light"] .portrait-tag .portrait-handle,
+html.light .portrait-tag .portrait-handle {
+  color: #855806 !important;
+  font-weight: 700 !important;
+}
+
+html[data-theme="dark"] .portrait-tag,
+html.dark .portrait-tag {
+  background-color: rgba(9, 9, 11, 0.88) !important;
+  border-color: rgba(212, 175, 55, 0.3) !important;
+  box-shadow: 0 12px 32px -4px rgba(0, 0, 0, 0.8) !important;
+}
+
+html[data-theme="dark"] .portrait-tag .creator-name,
+html.dark .portrait-tag .creator-name {
+  color: #ffffff !important;
+  font-weight: 600 !important;
+}
+
+html[data-theme="dark"] .portrait-tag .portrait-handle,
+html.dark .portrait-tag .portrait-handle {
+  color: #d4af37 !important;
+  font-weight: 600 !important;
+}
+

@@ -79,7 +79,7 @@ export const Connect: React.FC = () => {
           <p className="text-xs text-[#a1a1aa] leading-relaxed">
             You can also tag Abhishek or send comments directly on his verified social channels:
           </p>
-          <div className="flex items-center justify-center gap-6 pt-2 text-xs font-semibold">
+          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 pt-2 text-xs font-semibold">
             <a
               href={siteConfig.socials.instagram}
               target="_blank"
@@ -87,9 +87,29 @@ export const Connect: React.FC = () => {
               className="inline-flex items-center gap-1.5 text-[#d4af37] hover:underline"
             >
               <Instagram className="w-4 h-4" />
-              Instagram DMs &amp; Comments
+              Main Instagram (@ji_abhishek_ji_)
             </a>
-            <span className="text-[#3f3f50]">•</span>
+            <span className="text-[#3f3f50] hidden sm:inline">•</span>
+            <a
+              href={siteConfig.socials.patnaInstagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-[#d4af37] hover:underline"
+            >
+              <Instagram className="w-4 h-4" />
+              Patna Storyteller (@patna_wale_abhishek_ji)
+            </a>
+            <span className="text-[#3f3f50] hidden sm:inline">•</span>
+            <a
+              href={siteConfig.socials.mummyInstagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-[#d4af37] hover:underline"
+            >
+              <Instagram className="w-4 h-4" />
+              Mummy Ji (@ji_abhishek_ji_ki_mummy)
+            </a>
+            <span className="text-[#3f3f50] hidden sm:inline">•</span>
             <a
               href={siteConfig.socials.youtube}
               target="_blank"

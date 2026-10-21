@@ -228,7 +228,7 @@ export const About: React.FC = () => {
             Stay updated with daily reels, upcoming sketches, and live appearance announcements.
           </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 pt-2">
             <a
               href={siteConfig.socials.instagram}
               target="_blank"
@@ -240,6 +240,34 @@ export const About: React.FC = () => {
                 leftIcon={<Instagram className="w-4 h-4" />}
               >
                 Instagram @ji_abhishek_ji_
+              </Button>
+            </a>
+
+            <a
+              href={siteConfig.socials.patnaInstagram}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                variant="outline"
+                size="md"
+                leftIcon={<Instagram className="w-4 h-4" />}
+              >
+                Patna @patna_wale_abhishek_ji
+              </Button>
+            </a>
+
+            <a
+              href={siteConfig.socials.mummyInstagram}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                variant="outline"
+                size="md"
+                leftIcon={<Instagram className="w-4 h-4" />}
+              >
+                Mummy Ji @ji_abhishek_ji_ki_mummy
               </Button>
             </a>
 

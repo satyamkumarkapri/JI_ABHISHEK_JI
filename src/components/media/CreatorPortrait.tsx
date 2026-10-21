@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Sparkles } from "lucide-react";
+import { useTheme } from "../../context/ThemeContext";
 
 export interface CreatorPortraitProps {
   src?: string;
@@ -14,6 +15,7 @@ export const CreatorPortrait: React.FC<CreatorPortraitProps> = ({
   className = "",
   priority = false,
 }) => {
+  const { theme } = useTheme();
   const [hasError, setHasError] = useState(false);
 
   return (
@@ -55,15 +57,29 @@ export const CreatorPortrait: React.FC<CreatorPortraitProps> = ({
           aria-hidden="true"
         />
 
-        {/* Small Discreet Floating Tag */}
-        <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between p-3 rounded-xl bg-black/60 backdrop-blur-md border border-white/10 text-xs">
+        {/* High-Contrast Floating Identity Tag */}
+        <div
+          className={`portrait-tag absolute bottom-4 left-4 right-4 flex items-center justify-between p-3 rounded-xl backdrop-blur-md border text-xs shadow-lg transition-colors duration-300 ${
+            theme === "light"
+              ? "bg-white/95 border-[#ded7c8] text-zinc-900 shadow-md"
+              : "bg-black/75 border-white/15 text-white shadow-2xl"
+          }`}
+        >
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-[#d4af37] animate-pulse" />
-            <span className="font-semibold text-white tracking-wide">
+            <span
+              className={`creator-name font-semibold tracking-wide ${
+                theme === "light" ? "text-[#111114]" : "text-white"
+              }`}
+            >
               Abhishek Singh
             </span>
           </div>
-          <span className="text-[#d4af37] text-[11px] font-mono tracking-wider flex items-center gap-1">
+          <span
+            className={`portrait-handle text-[11px] font-mono tracking-wider flex items-center gap-1 ${
+              theme === "light" ? "text-[#855806] font-bold" : "text-[#d4af37]"
+            }`}
+          >
             <Sparkles className="w-3 h-3" />
             @ji_abhishek_ji_
           </span>

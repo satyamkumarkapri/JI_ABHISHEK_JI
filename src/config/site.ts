@@ -23,6 +23,8 @@ export interface SiteConfig {
   socials: {
     instagram: string;
     youtube: string;
+    patnaInstagram: string;
+    mummyInstagram: string;
     publicEmail?: string;
   };
   formspree: {
@@ -72,6 +74,8 @@ export const siteConfig: SiteConfig = {
   socials: {
     instagram: "https://www.instagram.com/ji_abhishek_ji_/",
     youtube: "https://www.youtube.com/@ji_abhishek_ji_",
+    patnaInstagram: "https://www.instagram.com/patna_wale_abhishek_ji/",
+    mummyInstagram: "https://www.instagram.com/ji_abhishek_ji_ki_mummy/",
     publicEmail: import.meta.env.VITE_PUBLIC_CONTACT_EMAIL || undefined,
   },
   formspree: {

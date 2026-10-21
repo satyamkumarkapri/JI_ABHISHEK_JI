@@ -16,6 +16,8 @@ describe("Data Integrity & Compliance", () => {
   it("should have verified official social URLs", () => {
     expect(siteConfig.socials.instagram).toBe("https://www.instagram.com/ji_abhishek_ji_/");
     expect(siteConfig.socials.youtube).toBe("https://www.youtube.com/@ji_abhishek_ji_");
+    expect(siteConfig.socials.patnaInstagram).toBe("https://www.instagram.com/patna_wale_abhishek_ji/");
+    expect(siteConfig.socials.mummyInstagram).toBe("https://www.instagram.com/ji_abhishek_ji_ki_mummy/");
   });
 
   it("should have verified categories in video data", () => {
@@ -48,9 +50,11 @@ describe("Data Integrity & Compliance", () => {
     });
   });
 
-  it("should contain official verified channels", () => {
-    expect(socialChannels.length).toBe(2);
-    expect(socialChannels[0].name).toBe("Instagram");
-    expect(socialChannels[1].name).toBe("YouTube");
+  it("should contain all 4 official verified channels", () => {
+    expect(socialChannels.length).toBe(4);
+    const handles = socialChannels.map((c) => c.handle);
+    expect(handles).toContain("@ji_abhishek_ji_");
+    expect(handles).toContain("@patna_wale_abhishek_ji");
+    expect(handles).toContain("@ji_abhishek_ji_ki_mummy");
   });
 });

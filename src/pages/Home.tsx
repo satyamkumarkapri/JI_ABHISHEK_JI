@@ -115,7 +115,7 @@ export const Home: React.FC = () => {
               </div>
 
               {/* Social Channels Trust Strip */}
-              <div className="pt-6 border-t border-[#22222e] flex flex-wrap items-center gap-6 text-xs text-[#8e8ea0]">
+              <div className="pt-6 border-t border-[#22222e] flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-[#8e8ea0]">
                 <span className="font-semibold text-white tracking-wide">
                   OFFICIAL CHANNELS:
                 </span>
@@ -124,18 +124,40 @@ export const Home: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-1.5 hover:text-[#d4af37] transition-colors"
+                  title="Main Official Profile (1.9M+)"
                 >
                   <Instagram className="w-4 h-4 text-[#d4af37]" />
-                  <span>Instagram @ji_abhishek_ji_</span>
+                  <span>@ji_abhishek_ji_</span>
+                </a>
+                <a
+                  href={siteConfig.socials.patnaInstagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 hover:text-[#d4af37] transition-colors"
+                  title="Abhishek's Patna Storyteller Profile"
+                >
+                  <Instagram className="w-4 h-4 text-[#d4af37]" />
+                  <span>@patna_wale_abhishek_ji</span>
+                </a>
+                <a
+                  href={siteConfig.socials.mummyInstagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 hover:text-[#d4af37] transition-colors"
+                  title="Abhishek ji ki Mummy Official Profile"
+                >
+                  <Instagram className="w-4 h-4 text-[#d4af37]" />
+                  <span>@ji_abhishek_ji_ki_mummy</span>
                 </a>
                 <a
                   href={siteConfig.socials.youtube}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-1.5 hover:text-[#d4af37] transition-colors"
+                  title="Official YouTube Channel (1.3M+)"
                 >
                   <Youtube className="w-4 h-4 text-[#d4af37]" />
-                  <span>YouTube Official</span>
+                  <span>YouTube</span>
                 </a>
               </div>
             </div>
@@ -233,24 +255,24 @@ export const Home: React.FC = () => {
             description="Official and verified digital channels where fresh sketches, behind-the-scenes moments, and daily comedy are published."
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
             {socialChannels.map((channel) => (
               <div
-                key={channel.name}
-                className="p-8 rounded-2xl bg-[#121218] border border-[#272733] hover:border-[#d4af37]/50 transition-all duration-300 text-left space-y-5 flex flex-col justify-between shadow-xl"
+                key={channel.handle}
+                className="p-7 sm:p-8 rounded-2xl bg-[#121218] border border-[#272733] hover:border-[#d4af37]/50 transition-all duration-300 text-left space-y-5 flex flex-col justify-between shadow-xl"
               >
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
                     <div className="w-12 h-12 rounded-xl bg-[#181824] border border-[#d4af37]/30 flex items-center justify-center text-[#d4af37]">
-                      {channel.name === "Instagram" ? (
-                        <Instagram className="w-6 h-6" />
-                      ) : (
+                      {channel.platform === "youtube" ? (
                         <Youtube className="w-6 h-6" />
+                      ) : (
+                        <Instagram className="w-6 h-6" />
                       )}
                     </div>
                     <span className="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold flex items-center gap-1">
                       <ShieldCheck className="w-3.5 h-3.5" />
-                      Verified Profile
+                      {channel.badge || "Verified Channel"}
                     </span>
                   </div>
 
@@ -292,7 +314,7 @@ export const Home: React.FC = () => {
                     className="block"
                   >
                     <Button
-                      variant={channel.name === "Instagram" ? "primary" : "secondary"}
+                      variant={channel.platform === "youtube" ? "secondary" : "primary"}
                       size="md"
                       className="w-full"
                       rightIcon={<ArrowRight className="w-4 h-4" />}

@@ -175,7 +175,33 @@ export const Contact: React.FC = () => {
                 >
                   <span className="flex items-center gap-2">
                     <Instagram className="w-4 h-4 text-[#d4af37]" />
-                    Instagram: @ji_abhishek_ji_
+                    Main IG: @ji_abhishek_ji_
+                  </span>
+                  <ArrowRight className="w-3.5 h-3.5 text-[#71717a]" />
+                </a>
+
+                <a
+                  href={siteConfig.socials.patnaInstagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-between p-3 rounded-xl bg-[#181822] hover:bg-[#20202e] text-xs font-medium text-white transition-colors"
+                >
+                  <span className="flex items-center gap-2">
+                    <Instagram className="w-4 h-4 text-[#d4af37]" />
+                    Patna: @patna_wale_abhishek_ji
+                  </span>
+                  <ArrowRight className="w-3.5 h-3.5 text-[#71717a]" />
+                </a>
+
+                <a
+                  href={siteConfig.socials.mummyInstagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-between p-3 rounded-xl bg-[#181822] hover:bg-[#20202e] text-xs font-medium text-white transition-colors"
+                >
+                  <span className="flex items-center gap-2">
+                    <Instagram className="w-4 h-4 text-[#d4af37]" />
+                    Mummy Ji: @ji_abhishek_ji_ki_mummy
                   </span>
                   <ArrowRight className="w-3.5 h-3.5 text-[#71717a]" />
                 </a>
