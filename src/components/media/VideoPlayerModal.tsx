@@ -59,7 +59,7 @@ export const VideoPlayerModal: React.FC<VideoPlayerModalProps> = ({ video, onClo
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
           transition={{ duration: 0.2 }}
-          className={`relative w-full ${
+          className={`cinematic-modal relative w-full ${
             isShort ? "max-w-md" : "max-w-4xl"
           } bg-[#121218] border border-[#2e2e3d] rounded-2xl overflow-hidden shadow-2xl z-10 flex flex-col`}
         >

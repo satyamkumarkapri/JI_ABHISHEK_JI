@@ -9,7 +9,6 @@ export interface VideoCardProps {
 }
 
 export const VideoCard: React.FC<VideoCardProps> = ({ video, onSelect }) => {
-  const isShort = video.platform === "youtube_shorts";
   const [thumbSrc, setThumbSrc] = useState<string>(
     video.thumbnailUrl ||
       (video.videoId ? `https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg` : "")
@@ -31,9 +30,7 @@ export const VideoCard: React.FC<VideoCardProps> = ({ video, onSelect }) => {
     >
       {/* Thumbnail Aspect Box */}
       <div
-        className={`relative w-full ${
-          isShort ? "aspect-[9/14]" : "aspect-video"
-        } bg-[#0c0c12] overflow-hidden flex items-center justify-center`}
+        className="relative w-full aspect-video bg-[#0c0c12] overflow-hidden flex items-center justify-center"
       >
         {thumbSrc ? (
           <img

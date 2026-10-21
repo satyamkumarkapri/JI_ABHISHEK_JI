@@ -73,7 +73,7 @@ export const GalleryLightbox: React.FC<GalleryLightboxProps> = ({
         role="dialog"
         aria-modal="true"
         aria-label={currentItem.title}
-        className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 overflow-hidden select-none"
+        className="cinematic-lightbox fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 overflow-hidden select-none"
       >
         {/* Backdrop */}
         <motion.div

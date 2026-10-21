@@ -5,8 +5,10 @@ import { Instagram, Youtube } from "../ui/Icons";
 import { siteConfig } from "../../config/site";
 import { Button } from "../ui/Button";
 import { ThemeToggle } from "../ui/ThemeToggle";
+import { useTheme } from "../../context/ThemeContext";
 
 export const Navbar: React.FC = () => {
+  const { theme } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { pathname } = useLocation();
@@ -52,7 +54,11 @@ export const Navbar: React.FC = () => {
       <header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
           isScrolled
-            ? "bg-[#09090b]/90 backdrop-blur-xl border-b border-[#272733] py-3.5 shadow-2xl"
+            ? theme === "light"
+              ? "bg-[#f7f5ef]/95 backdrop-blur-xl border-b border-[#ded7c8] py-3.5 shadow-md"
+              : "bg-[#09090b]/90 backdrop-blur-xl border-b border-[#272733] py-3.5 shadow-2xl"
+            : theme === "light"
+            ? "bg-gradient-to-b from-[#f7f5ef]/90 via-[#f7f5ef]/50 to-transparent py-5"
             : "bg-gradient-to-b from-black/80 via-black/40 to-transparent py-5"
         }`}
       >
@@ -63,14 +69,30 @@ export const Navbar: React.FC = () => {
             className="flex items-center gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d4af37] rounded-lg"
             aria-label="JI ABHISHEK JI Home"
           >
-            <div className="w-10 h-10 rounded-xl bg-[#14141c] border border-[#d4af37]/40 flex items-center justify-center text-[#d4af37] group-hover:border-[#d4af37] transition-colors shadow-inner">
+            <div
+              className={`w-10 h-10 rounded-xl flex items-center justify-center transition-colors shadow-inner ${
+                theme === "light"
+                  ? "bg-white border border-[#ded7c8] text-[#855806] group-hover:border-[#855806] shadow-sm"
+                  : "bg-[#14141c] border border-[#d4af37]/40 text-[#d4af37] group-hover:border-[#d4af37]"
+              }`}
+            >
               <span className="font-['Cinzel',serif] text-lg font-bold tracking-wider">JA</span>
             </div>
             <div className="text-left">
-              <span className="font-['Cinzel',serif] text-base sm:text-lg font-extrabold text-white tracking-widest block leading-none group-hover:text-[#f5e6ab] transition-colors">
+              <span
+                className={`font-['Cinzel',serif] text-base sm:text-lg font-extrabold tracking-widest block leading-none transition-colors ${
+                  theme === "light"
+                    ? "text-[#111114] group-hover:text-[#855806]"
+                    : "text-white group-hover:text-[#f5e6ab]"
+                }`}
+              >
                 JI ABHISHEK JI
               </span>
-              <span className="text-[10px] uppercase font-semibold text-[#d4af37] tracking-widest block mt-1">
+              <span
+                className={`text-[10px] uppercase font-semibold tracking-widest block mt-1 ${
+                  theme === "light" ? "text-[#855806]" : "text-[#d4af37]"
+                }`}
+              >
                 From Bihar, With Love
               </span>
             </div>
@@ -79,7 +101,11 @@ export const Navbar: React.FC = () => {
           {/* Desktop Nav Links */}
           <nav
             aria-label="Main Navigation"
-            className="hidden lg:flex items-center gap-1 bg-[#121218]/80 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/5 shadow-sm"
+            className={`hidden lg:flex items-center gap-1 backdrop-blur-md px-4 py-1.5 rounded-full border shadow-sm ${
+              theme === "light"
+                ? "bg-white/95 border-[#ded7c8]"
+                : "bg-[#121218]/80 border-white/5"
+            }`}
           >
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
@@ -90,6 +116,8 @@ export const Navbar: React.FC = () => {
                   className={`px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide transition-all duration-200 ${
                     isActive
                       ? "text-black bg-[#d4af37] shadow-sm font-bold"
+                      : theme === "light"
+                      ? "text-zinc-600 hover:text-black hover:bg-black/5"
                       : "text-[#d4d4d8] hover:text-white hover:bg-white/5"
                   }`}
                 >
@@ -101,13 +129,21 @@ export const Navbar: React.FC = () => {
 
           {/* Right Action Icons & Highlight Button */}
           <div className="hidden lg:flex items-center gap-3">
-            <div className="flex items-center gap-1.5 pr-2 border-r border-[#272733]">
+            <div
+              className={`flex items-center gap-1.5 pr-2 border-r ${
+                theme === "light" ? "border-[#ded7c8]" : "border-[#272733]"
+              }`}
+            >
               <a
                 href={siteConfig.socials.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Follow Abhishek Singh on Instagram"
-                className="p-2 rounded-full text-[#a1a1aa] hover:text-[#d4af37] hover:bg-white/5 transition-colors"
+                className={`p-2 rounded-full transition-colors ${
+                  theme === "light"
+                    ? "text-zinc-600 hover:text-[#855806] hover:bg-black/5"
+                    : "text-[#a1a1aa] hover:text-[#d4af37] hover:bg-white/5"
+                }`}
                 title="Instagram @ji_abhishek_ji_"
               >
                 <Instagram className="w-4 h-4" />
@@ -118,7 +154,11 @@ export const Navbar: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Subscribe to JI ABHISHEK JI on YouTube"
-                className="p-2 rounded-full text-[#a1a1aa] hover:text-[#d4af37] hover:bg-white/5 transition-colors"
+                className={`p-2 rounded-full transition-colors ${
+                  theme === "light"
+                    ? "text-zinc-600 hover:text-[#855806] hover:bg-black/5"
+                    : "text-[#a1a1aa] hover:text-[#d4af37] hover:bg-white/5"
+                }`}
                 title="YouTube @ji_abhishek_ji_"
               >
                 <Youtube className="w-4 h-4" />
@@ -153,7 +193,11 @@ export const Navbar: React.FC = () => {
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
               aria-expanded={mobileMenuOpen}
-              className="p-2 rounded-xl bg-[#14141c] border border-[#272733] text-white hover:border-[#d4af37] transition-colors cursor-pointer"
+              className={`p-2 rounded-xl border transition-colors cursor-pointer ${
+                theme === "light"
+                  ? "bg-white border-[#ded7c8] text-zinc-900 hover:border-[#855806]"
+                  : "bg-[#14141c] border-[#272733] text-white hover:border-[#d4af37]"
+              }`}
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
@@ -167,19 +211,37 @@ export const Navbar: React.FC = () => {
           role="dialog"
           aria-modal="true"
           aria-label="Mobile Navigation Drawer"
-          className="fixed inset-0 z-50 lg:hidden flex flex-col bg-[#09090b]/98 backdrop-blur-2xl"
+          className={`fixed inset-0 z-50 lg:hidden flex flex-col ${
+            theme === "light"
+              ? "bg-[#f7f5ef] text-zinc-900"
+              : "bg-[#09090b]/98 backdrop-blur-2xl text-white"
+          }`}
         >
           {/* Mobile Drawer Header */}
-          <div className="p-5 flex items-center justify-between border-b border-[#22222e]">
+          <div
+            className={`p-5 flex items-center justify-between border-b ${
+              theme === "light" ? "border-[#ded7c8]" : "border-[#22222e]"
+            }`}
+          >
             <Link
               to="/"
               onClick={() => setMobileMenuOpen(false)}
               className="flex items-center gap-3"
             >
-              <div className="w-9 h-9 rounded-xl bg-[#14141c] border border-[#d4af37]/40 flex items-center justify-center text-[#d4af37]">
+              <div
+                className={`w-9 h-9 rounded-xl flex items-center justify-center ${
+                  theme === "light"
+                    ? "bg-white border border-[#ded7c8] text-[#855806]"
+                    : "bg-[#14141c] border border-[#d4af37]/40 text-[#d4af37]"
+                }`}
+              >
                 <span className="font-['Cinzel',serif] text-base font-bold">JA</span>
               </div>
-              <span className="font-['Cinzel',serif] text-base font-bold text-white tracking-wider">
+              <span
+                className={`font-['Cinzel',serif] text-base font-bold tracking-wider ${
+                  theme === "light" ? "text-zinc-900" : "text-white"
+                }`}
+              >
                 JI ABHISHEK JI
               </span>
             </Link>
@@ -187,7 +249,11 @@ export const Navbar: React.FC = () => {
               type="button"
               onClick={() => setMobileMenuOpen(false)}
               aria-label="Close navigation menu"
-              className="p-2 rounded-xl bg-[#14141c] border border-[#272733] text-white"
+              className={`p-2 rounded-xl border ${
+                theme === "light"
+                  ? "bg-white border-[#ded7c8] text-zinc-900"
+                  : "bg-[#14141c] border-[#272733] text-white"
+              }`}
             >
               <X className="w-5 h-5" />
             </button>
@@ -204,7 +270,11 @@ export const Navbar: React.FC = () => {
                   onClick={() => setMobileMenuOpen(false)}
                   className={`flex items-center justify-between px-4 py-3 rounded-xl text-base font-medium transition-colors ${
                     isActive
-                      ? "bg-[#181822] text-[#d4af37] border border-[#d4af37]/30 font-bold"
+                      ? theme === "light"
+                        ? "bg-white text-[#855806] border border-[#d4af37]/40 font-bold shadow-sm"
+                        : "bg-[#181822] text-[#d4af37] border border-[#d4af37]/30 font-bold"
+                      : theme === "light"
+                      ? "text-zinc-700 hover:bg-black/5 hover:text-zinc-900"
                       : "text-[#d4d4d8] hover:bg-white/5 hover:text-white"
                   }`}
                 >
@@ -230,23 +300,37 @@ export const Navbar: React.FC = () => {
           </div>
 
           {/* Mobile Drawer Footer Socials */}
-          <div className="p-6 border-t border-[#22222e] bg-[#0c0c10] flex items-center justify-around">
+          <div
+            className={`p-6 border-t flex items-center justify-around ${
+              theme === "light"
+                ? "border-[#ded7c8] bg-[#ede8db] text-zinc-800"
+                : "border-[#22222e] bg-[#0c0c10] text-[#d4d4d8]"
+            }`}
+          >
             <a
               href={siteConfig.socials.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-xs font-semibold text-[#d4d4d8] hover:text-[#d4af37]"
+              className={`flex items-center gap-2 text-xs font-semibold ${
+                theme === "light"
+                  ? "text-zinc-800 hover:text-[#855806]"
+                  : "text-[#d4d4d8] hover:text-[#d4af37]"
+              }`}
             >
-              <Instagram className="w-4 h-4 text-[#d4af37]" />
+              <Instagram className={`w-4 h-4 ${theme === "light" ? "text-[#855806]" : "text-[#d4af37]"}`} />
               Instagram
             </a>
             <a
               href={siteConfig.socials.youtube}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-xs font-semibold text-[#d4d4d8] hover:text-[#d4af37]"
+              className={`flex items-center gap-2 text-xs font-semibold ${
+                theme === "light"
+                  ? "text-zinc-800 hover:text-[#855806]"
+                  : "text-[#d4d4d8] hover:text-[#d4af37]"
+              }`}
             >
-              <Youtube className="w-4 h-4 text-[#d4af37]" />
+              <Youtube className={`w-4 h-4 ${theme === "light" ? "text-[#855806]" : "text-[#d4af37]"}`} />
               YouTube
             </a>
           </div>
