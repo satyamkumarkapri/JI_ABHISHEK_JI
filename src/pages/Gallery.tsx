@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Camera, Sparkles, Info } from "lucide-react";
+import { Camera, Sparkles } from "lucide-react";
 import { Instagram } from "../components/ui/Icons";
 import { siteConfig } from "../config/site";
 import { GalleryGrid } from "../components/media/GalleryGrid";
@@ -33,12 +33,10 @@ export const Gallery: React.FC = () => {
           </p>
         </div>
 
-        {/* Note on Approved Photography */}
-        <div className="p-4 rounded-xl bg-[#14141c] border border-[#272733] max-w-2xl mx-auto text-xs text-[#8e8ea0] flex items-center justify-center gap-2">
-          <Info className="w-4 h-4 text-[#d4af37] shrink-0" />
-          <span>
-            Photographs are curated and verified. Update or add new approved captures anytime in <code className="text-[#d4af37]">src/data/gallery.ts</code>.
-          </span>
+        {/* Verified Visual Archive Badge */}
+        <div className="flex items-center justify-center gap-2 text-xs text-[#d4af37] bg-[#14141c] border border-[#d4af37]/20 rounded-full px-4 py-1.5 max-w-md mx-auto">
+          <Sparkles className="w-3.5 h-3.5 shrink-0" />
+          <span>Curated visual moments from verified productions & Instagram stories</span>
         </div>
 
         {/* Gallery Grid with Lightbox */}

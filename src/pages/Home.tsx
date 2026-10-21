@@ -266,6 +266,22 @@ export const Home: React.FC = () => {
                   <p className="text-xs sm:text-sm text-[#a1a1aa] leading-relaxed">
                     {channel.description}
                   </p>
+
+                  {channel.verifiedMetric && (
+                    <div className="p-3.5 rounded-xl bg-[#171722] border border-[#d4af37]/30 flex items-center justify-between">
+                      <div>
+                        <span className="text-xl sm:text-2xl font-bold font-['Cinzel',serif] text-gold-gradient block">
+                          {channel.verifiedMetric.value}
+                        </span>
+                        <span className="text-xs text-[#a1a1aa] font-medium">
+                          {channel.verifiedMetric.label}
+                        </span>
+                      </div>
+                      <span className="text-[10px] uppercase font-mono text-[#d4af37] px-2.5 py-1 rounded-full bg-black/50 border border-[#d4af37]/30">
+                        {channel.verifiedMetric.source}
+                      </span>
+                    </div>
+                  )}
                 </div>
 
                 <div className="pt-4 border-t border-[#22222e]">

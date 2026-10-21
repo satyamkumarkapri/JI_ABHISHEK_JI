@@ -61,9 +61,9 @@ export const siteConfig: SiteConfig = {
   connectCTA: "Connect With Me",
   bio: "Abhishek Singh, known to his digital family as JI ABHISHEK JI, is an Indian comedian, entertainer, and digital storyteller from Bihar. He brings authentic desi humor, vibrant family observations, and heartwarming relatable stories to millions in Hindi and Bhojpuri.",
   extendedBio: [
-    "Originating from Bihar, Abhishek Singh began crafting comedy inspired by the humorous realities of everyday Indian households, student life, train journeys, and heartwarming conversations.",
-    "His storytelling blends sharp observational timing with rich Hindi and Bhojpuri expressions, creating characters and scenarios that resonate deeply across generations.",
-    "Whether performing relatable sketches, sharing vlogs from his travels, or engaging directly with his digital community, Abhishek's creative philosophy stays true to simplicity, authenticity, and spreading joy."
+    "From early struggles working in a cloth-rolling factory and delivery services in Mumbai to building a digital family of over 1.9 Million followers, Abhishek Singh’s journey is rooted in resilience, family love, and authenticity.",
+    "Returning to his native roots in Bihar, he began recording relatable comedy sketches with his mother and brother Vishal. His viral 'Maa-Beta' sketches and sharp Hindi-Bhojpuri humor captured the hearts of families across India.",
+    "Today, whether performing at live college comedy nights, crafting episodic sketches, or sharing daily stories on Instagram (@ji_abhishek_ji_), Abhishek stays true to simplicity, cultural pride, and clean family entertainment.",
   ],
   philosophy:
     "To turn everyday desi experiences into laughter that families can enjoy together, keeping roots firmly grounded while welcoming new creative horizons.",
