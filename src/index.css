@@ -20,9 +20,10 @@
   --font-hindi: 'Noto Sans Devanagari', 'Plus Jakarta Sans', sans-serif;
 }
 
-/* Global Styles */
+/* Global Styles & Mobile Touch Optimizations */
 * {
   border-color: var(--color-brand-border);
+  -webkit-tap-highlight-color: transparent;
 }
 
 html {
@@ -30,12 +31,30 @@ html {
   background-color: var(--color-brand-bg);
   color: var(--color-brand-ivory);
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
   margin: 0;
   overflow-x: hidden;
   min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -webkit-overflow-scrolling: touch;
+  padding-left: env(safe-area-inset-left, 0px);
+  padding-right: env(safe-area-inset-right, 0px);
+}
+
+/* Fast tap response on touch devices without delays */
+button,
+a,
+input,
+select,
+textarea,
+[role="button"] {
+  touch-action: manipulation;
 }
 
 /* Custom Scrollbar */
