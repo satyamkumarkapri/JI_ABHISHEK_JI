@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Heart, ShieldCheck, Mail } from "lucide-react";
 import { Instagram, Youtube } from "../ui/Icons";
 import { siteConfig } from "../../config/site";
+import { ThemeToggle } from "../ui/ThemeToggle";
 
 const CURRENT_YEAR = new Date().getFullYear();
 
@@ -139,9 +140,12 @@ export const Footer: React.FC = () => {
         {/* Bottom Bar */}
         <div className="mt-14 pt-8 border-t border-[#181824] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#71717a]">
           <p>© {CURRENT_YEAR} JI ABHISHEK JI (Abhishek Singh). All rights reserved.</p>
-          <p className="flex items-center gap-1">
-            Made with <Heart className="w-3.5 h-3.5 text-rose-500 fill-current" /> From Bihar, For The World.
-          </p>
+          <div className="flex items-center gap-4">
+            <ThemeToggle showLabel className="text-[11px] px-2.5 py-1" />
+            <p className="flex items-center gap-1">
+              Made with <Heart className="w-3.5 h-3.5 text-rose-500 fill-current" /> From Bihar, For The World.
+            </p>
+          </div>
         </div>
       </div>
     </footer>

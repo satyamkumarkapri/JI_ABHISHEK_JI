@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ToastProvider } from "./components/ui/Toast";
+import { ThemeProvider } from "./context/ThemeContext";
 import { ScrollToTopOnNavigate, BackToTopButton } from "./components/ui/ScrollToTop";
 import { Navbar } from "./components/layout/Navbar";
 import { Footer } from "./components/layout/Footer";
@@ -21,9 +22,10 @@ import { NotFound } from "./pages/NotFound";
 
 export const App: React.FC = () => {
   return (
-    <ToastProvider>
-      <BrowserRouter>
-        <ScrollToTopOnNavigate />
+    <ThemeProvider>
+      <ToastProvider>
+        <BrowserRouter>
+          <ScrollToTopOnNavigate />
         <div className="min-h-screen flex flex-col bg-[#09090b] text-[#f4f4f5] antialiased selection:bg-[#d4af37] selection:text-black">
           <Navbar />
           <main className="flex-1 w-full flex flex-col" id="main-content">
@@ -47,6 +49,7 @@ export const App: React.FC = () => {
         </div>
       </BrowserRouter>
     </ToastProvider>
+  </ThemeProvider>
   );
 };
 

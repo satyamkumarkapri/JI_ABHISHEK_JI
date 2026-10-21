@@ -55,16 +55,35 @@ export const Videos: React.FC = () => {
                 }}
                 className="lg:col-span-7 relative aspect-video bg-[#181822] cursor-pointer group flex items-center justify-center overflow-hidden focus-visible:outline-none"
               >
-                <div className="w-full h-full flex flex-col items-center justify-center p-8 text-center bg-gradient-to-br from-[#1c1a26] via-[#121218] to-[#09090b]">
-                  <div className="w-16 h-16 rounded-full bg-[#d4af37] text-black flex items-center justify-center shadow-2xl transform scale-95 group-hover:scale-110 transition-transform duration-300 mb-3">
+                {featuredVideo.thumbnailUrl ? (
+                  <img
+                    src={featuredVideo.thumbnailUrl}
+                    alt={featuredVideo.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                ) : (
+                  <div className="w-full h-full flex flex-col items-center justify-center p-8 text-center bg-gradient-to-br from-[#1c1a26] via-[#121218] to-[#09090b]">
+                    <div className="w-16 h-16 rounded-full bg-[#d4af37] text-black flex items-center justify-center shadow-2xl transform scale-95 group-hover:scale-110 transition-transform duration-300 mb-3">
+                      <Play className="w-7 h-7 fill-current ml-1" />
+                    </div>
+                    <span className="text-sm font-semibold text-white/90">
+                      Click to Play Featured Sketch
+                    </span>
+                  </div>
+                )}
+
+                <div
+                  className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30 opacity-60 group-hover:opacity-30 transition-opacity"
+                  aria-hidden="true"
+                />
+
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                  <div className="w-16 h-16 rounded-full bg-[#d4af37] text-black flex items-center justify-center shadow-2xl transform scale-95 group-hover:scale-110 transition-transform duration-300">
                     <Play className="w-7 h-7 fill-current ml-1" />
                   </div>
-                  <span className="text-sm font-semibold text-white/90">
-                    Click to Play Featured Sketch
-                  </span>
                 </div>
 
-                <div className="absolute top-4 left-4">
+                <div className="absolute top-4 left-4 z-10">
                   <span className="px-3 py-1 rounded-full bg-[#d4af37] text-black text-xs font-bold flex items-center gap-1 shadow-md">
                     <Sparkles className="w-3.5 h-3.5" />
                     Spotlight Video

@@ -1,5 +1,5 @@
-import React from "react";
-import { Play, ExternalLink, Sparkles } from "lucide-react";
+import React, { useState } from "react";
+import { Play, ExternalLink, Sparkles, Clock } from "lucide-react";
 import type { Video } from "../../data/videos";
 
 export interface VideoCardProps {
@@ -10,6 +10,10 @@ export interface VideoCardProps {
 
 export const VideoCard: React.FC<VideoCardProps> = ({ video, onSelect }) => {
   const isShort = video.platform === "youtube_shorts";
+  const [thumbSrc, setThumbSrc] = useState<string>(
+    video.thumbnailUrl ||
+      (video.videoId ? `https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg` : "")
+  );
 
   return (
     <div
@@ -23,19 +27,24 @@ export const VideoCard: React.FC<VideoCardProps> = ({ video, onSelect }) => {
         }
       }}
       aria-label={`Play ${video.title}`}
-      className="group flex flex-col rounded-2xl bg-[#121218] border border-[#272733] hover:border-[#d4af37]/60 overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-[#d4af37]/10 transition-all duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d4af37]"
+      className="group h-full flex flex-col rounded-2xl bg-[#121218] border border-[#272733] hover:border-[#d4af37]/60 overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-[#d4af37]/10 transition-all duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d4af37]"
     >
       {/* Thumbnail Aspect Box */}
       <div
         className={`relative w-full ${
           isShort ? "aspect-[9/14]" : "aspect-video"
-        } bg-[#181822] overflow-hidden flex items-center justify-center`}
+        } bg-[#0c0c12] overflow-hidden flex items-center justify-center`}
       >
-        {video.thumbnailUrl ? (
+        {thumbSrc ? (
           <img
-            src={video.thumbnailUrl}
+            src={thumbSrc}
             alt={video.title}
             loading="lazy"
+            onError={() => {
+              if (video.videoId && !thumbSrc.includes("mqdefault")) {
+                setThumbSrc(`https://img.youtube.com/vi/${video.videoId}/mqdefault.jpg`);
+              }
+            }}
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
         ) : (
@@ -64,7 +73,7 @@ export const VideoCard: React.FC<VideoCardProps> = ({ video, onSelect }) => {
 
         {/* Top Badges */}
         <div className="absolute top-3 left-3 right-3 flex items-center justify-between gap-2 pointer-events-none">
-          <span className="px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-md border border-white/10 text-[10px] font-semibold tracking-wider text-[#d4af37] uppercase">
+          <span className="px-2.5 py-1 rounded-full bg-black/75 backdrop-blur-md border border-white/10 text-[10px] font-semibold tracking-wider text-[#d4af37] uppercase">
             {video.category}
           </span>
           {video.featured && (
@@ -74,6 +83,14 @@ export const VideoCard: React.FC<VideoCardProps> = ({ video, onSelect }) => {
             </span>
           )}
         </div>
+
+        {/* Duration Badge */}
+        {video.duration && (
+          <div className="absolute bottom-2.5 right-2.5 px-2 py-0.5 rounded bg-black/80 backdrop-blur-sm text-[11px] font-mono font-medium text-white pointer-events-none flex items-center gap-1">
+            <Clock className="w-3 h-3 text-[#d4af37]" />
+            {video.duration}
+          </div>
+        )}
       </div>
 
       {/* Card Body */}
@@ -92,7 +109,9 @@ export const VideoCard: React.FC<VideoCardProps> = ({ video, onSelect }) => {
             Watch Video
             <ExternalLink className="w-3 h-3" />
           </span>
-          <span>{video.platform === "youtube_shorts" ? "Short" : "YouTube"}</span>
+          <span className="font-mono text-[11px]">
+            {video.platform === "youtube_shorts" ? "Short" : "YouTube"}
+          </span>
         </div>
       </div>
     </div>

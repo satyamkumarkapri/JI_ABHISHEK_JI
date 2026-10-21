@@ -4,6 +4,7 @@ import { Menu, X, Sparkles } from "lucide-react";
 import { Instagram, Youtube } from "../ui/Icons";
 import { siteConfig } from "../../config/site";
 import { Button } from "../ui/Button";
+import { ThemeToggle } from "../ui/ThemeToggle";
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -124,6 +125,8 @@ export const Navbar: React.FC = () => {
               </a>
             </div>
 
+            <ThemeToggle />
+
             <Link to="/collaborations">
               <Button
                 variant="primary"
@@ -135,10 +138,12 @@ export const Navbar: React.FC = () => {
             </Link>
           </div>
 
-          {/* Mobile Menu Hamburger */}
+          {/* Mobile Menu Actions */}
           <div className="flex items-center gap-2 lg:hidden">
-            <Link to="/collaborations" className="mr-1">
-              <Button variant="primary" size="sm" className="text-xs px-3 py-1.5">
+            <ThemeToggle />
+
+            <Link to="/collaborations" className="mr-0.5">
+              <Button variant="primary" size="sm" className="text-xs px-2.5 py-1.5">
                 Collabs
               </Button>
             </Link>
@@ -148,7 +153,7 @@ export const Navbar: React.FC = () => {
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
               aria-expanded={mobileMenuOpen}
-              className="p-2.5 rounded-xl bg-[#14141c] border border-[#272733] text-white hover:border-[#d4af37] transition-colors cursor-pointer"
+              className="p-2 rounded-xl bg-[#14141c] border border-[#272733] text-white hover:border-[#d4af37] transition-colors cursor-pointer"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
@@ -209,7 +214,9 @@ export const Navbar: React.FC = () => {
               );
             })}
 
-            <div className="pt-4 pb-2">
+            <div className="pt-4 pb-2 space-y-3">
+              <ThemeToggle showLabel className="w-full justify-center py-2.5" />
+              
               <Link
                 to="/collaborations"
                 onClick={() => setMobileMenuOpen(false)}

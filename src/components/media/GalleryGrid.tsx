@@ -57,72 +57,61 @@ export const GalleryGrid: React.FC<GalleryGridProps> = ({
         ))}
       </div>
 
-      {/* Masonry / Grid */}
+      {/* Grid — Perfectly Equal Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-        {displayedItems.map((item) => {
-          const aspectClass =
-            item.aspectRatio === "portrait"
-              ? "aspect-[3/4]"
-              : item.aspectRatio === "landscape"
-              ? "aspect-[4/3]"
-              : "aspect-square";
+        {displayedItems.map((item) => (
+          <div
+            key={item.id}
+            role="button"
+            tabIndex={0}
+            onClick={() => handleOpenLightbox(item)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                handleOpenLightbox(item);
+              }
+            }}
+            aria-label={`View ${item.title}`}
+            className="group relative rounded-2xl overflow-hidden bg-[#121218] border border-[#272733] hover:border-[#d4af37]/60 shadow-xl cursor-pointer transition-all duration-300 hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d4af37] aspect-[4/3] w-full"
+          >
+            <img
+              src={item.imageUrl}
+              alt={item.altText}
+              loading="lazy"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
 
-          return (
+            {/* Dark Vignette Overlay */}
             <div
-              key={item.id}
-              role="button"
-              tabIndex={0}
-              onClick={() => handleOpenLightbox(item)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                  e.preventDefault();
-                  handleOpenLightbox(item);
-                }
-              }}
-              aria-label={`View ${item.title}`}
-              className="group relative rounded-2xl overflow-hidden bg-[#121218] border border-[#272733] hover:border-[#d4af37]/60 shadow-xl cursor-pointer transition-all duration-300 hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d4af37]"
-            >
-              <div className={`relative w-full ${aspectClass} overflow-hidden bg-[#0c0c10]`}>
-                <img
-                  src={item.imageUrl}
-                  alt={item.altText}
-                  loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
+              className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"
+              aria-hidden="true"
+            />
 
-                {/* Dark Vignette Overlay */}
-                <div
-                  className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-300"
-                  aria-hidden="true"
-                />
-
-                {/* Hover Zoom Icon */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                  <div className="w-12 h-12 rounded-full bg-[#d4af37] text-black flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform">
-                    <ZoomIn className="w-5 h-5" />
-                  </div>
-                </div>
-
-                {/* Category Badge */}
-                <div className="absolute top-3 left-3 pointer-events-none">
-                  <span className="px-2.5 py-1 rounded-full bg-black/75 backdrop-blur-md border border-white/10 text-[10px] font-semibold tracking-wider text-[#d4af37] uppercase">
-                    {item.category}
-                  </span>
-                </div>
-
-                {/* Bottom Caption Overlay */}
-                <div className="absolute bottom-0 inset-x-0 p-4 transform translate-y-1 group-hover:translate-y-0 transition-transform duration-300 text-left pointer-events-none">
-                  <h3 className="text-sm font-bold font-['Cinzel',serif] text-white">
-                    {item.title}
-                  </h3>
-                  <p className="mt-1 text-xs text-[#a1a1aa] line-clamp-1">
-                    {item.caption}
-                  </p>
-                </div>
+            {/* Hover Zoom Icon */}
+            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+              <div className="w-12 h-12 rounded-full bg-[#d4af37] text-black flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform">
+                <ZoomIn className="w-5 h-5" />
               </div>
             </div>
-          );
-        })}
+
+            {/* Category Badge */}
+            <div className="absolute top-3 left-3 pointer-events-none">
+              <span className="px-2.5 py-1 rounded-full bg-black/75 backdrop-blur-md border border-white/10 text-[10px] font-semibold tracking-wider text-[#d4af37] uppercase">
+                {item.category}
+              </span>
+            </div>
+
+            {/* Bottom Caption Overlay */}
+            <div className="absolute bottom-0 inset-x-0 p-4 sm:p-5 transform translate-y-1 group-hover:translate-y-0 transition-transform duration-300 text-left pointer-events-none">
+              <h3 className="text-sm sm:text-base font-bold font-['Cinzel',serif] text-white drop-shadow-sm">
+                {item.title}
+              </h3>
+              <p className="mt-1 text-xs text-[#d4d4d8] line-clamp-1">
+                {item.caption}
+              </p>
+            </div>
+          </div>
+        ))}
       </div>
 
       {displayedItems.length === 0 && (

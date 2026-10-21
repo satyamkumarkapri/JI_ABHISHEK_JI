@@ -128,3 +128,91 @@ body {
     scroll-behavior: auto !important;
   }
 }
+
+/* Light Theme Styling (Cream / Ivory & Champagne Gold) */
+html[data-theme="light"] {
+  background-color: #f7f5ef;
+  color: #1a1a1e;
+}
+
+html[data-theme="light"] body {
+  background-color: #f7f5ef;
+  color: #1a1a1e;
+}
+
+html[data-theme="light"] .bg-\[\#09090b\],
+html[data-theme="light"] .bg-\[\#0a0a0c\] {
+  background-color: #f7f5ef !important;
+}
+
+html[data-theme="light"] .bg-\[\#0b0b10\] {
+  background-color: #f2eee3 !important;
+}
+
+html[data-theme="light"] .bg-\[\#0e0e14\] {
+  background-color: #ece6d7 !important;
+}
+
+html[data-theme="light"] .bg-\[\#121218\] {
+  background-color: #ffffff !important;
+  box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.06);
+}
+
+html[data-theme="light"] .bg-\[\#14141c\] {
+  background-color: #fdfbf7 !important;
+}
+
+html[data-theme="light"] .bg-\[\#181824\],
+html[data-theme="light"] .bg-\[\#181822\] {
+  background-color: #eee9dd !important;
+}
+
+html[data-theme="light"] .bg-\[\#171722\] {
+  background-color: #f4efe4 !important;
+}
+
+html[data-theme="light"] .border-\[\#272733\],
+html[data-theme="light"] .border-\[\#262633\],
+html[data-theme="light"] .border-\[\#22222e\],
+html[data-theme="light"] .border-\[\#1e1e28\],
+html[data-theme="light"] .border-\[\#2e2e3d\] {
+  border-color: #ded7c8 !important;
+}
+
+html[data-theme="light"] .text-white {
+  color: #111114 !important;
+}
+
+html[data-theme="light"] .text-\[\#d4d4d8\] {
+  color: #3f3f46 !important;
+}
+
+html[data-theme="light"] .text-\[\#a1a1aa\] {
+  color: #52525b !important;
+}
+
+html[data-theme="light"] .text-\[\#71717a\],
+html[data-theme="light"] .text-\[\#8e8ea0\] {
+  color: #71717a !important;
+}
+
+html[data-theme="light"] .glass-nav {
+  background: rgba(247, 245, 239, 0.94) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+html[data-theme="light"] .text-gold-gradient {
+  background: linear-gradient(135deg, #7c5e10 0%, #b8860b 45%, #996515 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+html[data-theme="light"] ::-webkit-scrollbar-track {
+  background: #f7f5ef;
+}
+html[data-theme="light"] ::-webkit-scrollbar-thumb {
+  background: #d4cfc4;
+}
+html[data-theme="light"] ::-webkit-scrollbar-thumb:hover {
+  background: #b8860b;
+}
