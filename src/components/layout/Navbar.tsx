@@ -52,14 +52,8 @@ export const Navbar: React.FC = () => {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-          isScrolled
-            ? theme === "light"
-              ? "bg-[#f7f5ef]/95 backdrop-blur-xl border-b border-[#ded7c8] py-3.5 shadow-md"
-              : "bg-[#09090b]/90 backdrop-blur-xl border-b border-[#272733] py-3.5 shadow-2xl"
-            : theme === "light"
-            ? "bg-gradient-to-b from-[#f7f5ef]/90 via-[#f7f5ef]/50 to-transparent py-5"
-            : "bg-gradient-to-b from-black/80 via-black/40 to-transparent py-5"
+        className={`fixed top-0 left-0 right-0 z-40 liquid-glass-header transition-all duration-300 ${
+          isScrolled ? "scrolled py-3 sm:py-3.5" : "py-4 sm:py-5"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -70,10 +64,8 @@ export const Navbar: React.FC = () => {
             aria-label="JI ABHISHEK JI Home"
           >
             <div
-              className={`w-10 h-10 rounded-xl flex items-center justify-center transition-colors shadow-inner ${
-                theme === "light"
-                  ? "bg-white border border-[#ded7c8] text-[#855806] group-hover:border-[#855806] shadow-sm"
-                  : "bg-[#14141c] border border-[#d4af37]/40 text-[#d4af37] group-hover:border-[#d4af37]"
+              className={`w-10 h-10 rounded-xl flex items-center justify-center liquid-logo-tile group-hover:scale-105 transition-all duration-300 ${
+                theme === "light" ? "text-[#855806]" : "text-[#d4af37]"
               }`}
             >
               <span className="font-['Cinzel',serif] text-lg font-bold tracking-wider">JA</span>
@@ -101,11 +93,7 @@ export const Navbar: React.FC = () => {
           {/* Desktop Nav Links */}
           <nav
             aria-label="Main Navigation"
-            className={`hidden lg:flex items-center gap-1 backdrop-blur-md px-4 py-1.5 rounded-full border shadow-sm ${
-              theme === "light"
-                ? "bg-white/95 border-[#ded7c8]"
-                : "bg-[#121218]/80 border-white/5"
-            }`}
+            className="hidden lg:flex items-center gap-1 liquid-glass-capsule px-2.5 py-1.5 rounded-full"
           >
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
@@ -115,10 +103,10 @@ export const Navbar: React.FC = () => {
                   to={link.href}
                   className={`px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide transition-all duration-200 ${
                     isActive
-                      ? "text-black bg-[#d4af37] shadow-sm font-bold"
+                      ? "liquid-active-tab shadow-sm"
                       : theme === "light"
-                      ? "text-zinc-600 hover:text-black hover:bg-black/5"
-                      : "text-[#d4d4d8] hover:text-white hover:bg-white/5"
+                      ? "text-zinc-700 hover:text-black hover:bg-black/5"
+                      : "text-zinc-300 hover:text-white hover:bg-white/10"
                   }`}
                 >
                   {link.title}
@@ -131,7 +119,7 @@ export const Navbar: React.FC = () => {
           <div className="hidden lg:flex items-center gap-3">
             <div
               className={`flex items-center gap-1.5 pr-2 border-r ${
-                theme === "light" ? "border-[#ded7c8]" : "border-[#272733]"
+                theme === "light" ? "border-[#d4af37]/25" : "border-white/10"
               }`}
             >
               <a
@@ -139,10 +127,10 @@ export const Navbar: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Follow Abhishek Singh on Instagram"
-                className={`p-2 rounded-full transition-colors ${
+                className={`p-2 rounded-full transition-all duration-200 ${
                   theme === "light"
-                    ? "text-zinc-600 hover:text-[#855806] hover:bg-black/5"
-                    : "text-[#a1a1aa] hover:text-[#d4af37] hover:bg-white/5"
+                    ? "text-zinc-700 hover:text-[#855806] hover:bg-black/5"
+                    : "text-zinc-300 hover:text-[#d4af37] hover:bg-white/10"
                 }`}
                 title="Instagram @ji_abhishek_ji_"
               >
@@ -154,10 +142,10 @@ export const Navbar: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Subscribe to JI ABHISHEK JI on YouTube"
-                className={`p-2 rounded-full transition-colors ${
+                className={`p-2 rounded-full transition-all duration-200 ${
                   theme === "light"
-                    ? "text-zinc-600 hover:text-[#855806] hover:bg-black/5"
-                    : "text-[#a1a1aa] hover:text-[#d4af37] hover:bg-white/5"
+                    ? "text-zinc-700 hover:text-[#855806] hover:bg-black/5"
+                    : "text-zinc-300 hover:text-[#d4af37] hover:bg-white/10"
                 }`}
                 title="YouTube @ji_abhishek_ji_"
               >
@@ -193,10 +181,10 @@ export const Navbar: React.FC = () => {
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
               aria-expanded={mobileMenuOpen}
-              className={`p-2 rounded-xl border transition-colors cursor-pointer ${
+              className={`p-2 rounded-xl border transition-all cursor-pointer liquid-logo-tile ${
                 theme === "light"
-                  ? "bg-white border-[#ded7c8] text-zinc-900 hover:border-[#855806]"
-                  : "bg-[#14141c] border-[#272733] text-white hover:border-[#d4af37]"
+                  ? "text-zinc-900 hover:border-[#855806]"
+                  : "text-white hover:border-[#d4af37]"
               }`}
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -211,16 +199,12 @@ export const Navbar: React.FC = () => {
           role="dialog"
           aria-modal="true"
           aria-label="Mobile Navigation Drawer"
-          className={`fixed inset-0 z-50 lg:hidden flex flex-col ${
-            theme === "light"
-              ? "bg-[#f7f5ef] text-zinc-900"
-              : "bg-[#09090b]/98 backdrop-blur-2xl text-white"
-          }`}
+          className="fixed inset-0 z-50 lg:hidden flex flex-col liquid-glass-drawer"
         >
           {/* Mobile Drawer Header */}
           <div
             className={`p-5 flex items-center justify-between border-b ${
-              theme === "light" ? "border-[#ded7c8]" : "border-[#22222e]"
+              theme === "light" ? "border-[#d4af37]/20" : "border-white/10"
             }`}
           >
             <Link
@@ -229,10 +213,8 @@ export const Navbar: React.FC = () => {
               className="flex items-center gap-3"
             >
               <div
-                className={`w-9 h-9 rounded-xl flex items-center justify-center ${
-                  theme === "light"
-                    ? "bg-white border border-[#ded7c8] text-[#855806]"
-                    : "bg-[#14141c] border border-[#d4af37]/40 text-[#d4af37]"
+                className={`w-9 h-9 rounded-xl flex items-center justify-center liquid-logo-tile ${
+                  theme === "light" ? "text-[#855806]" : "text-[#d4af37]"
                 }`}
               >
                 <span className="font-['Cinzel',serif] text-base font-bold">JA</span>
@@ -249,10 +231,8 @@ export const Navbar: React.FC = () => {
               type="button"
               onClick={() => setMobileMenuOpen(false)}
               aria-label="Close navigation menu"
-              className={`p-2 rounded-xl border ${
-                theme === "light"
-                  ? "bg-white border-[#ded7c8] text-zinc-900"
-                  : "bg-[#14141c] border-[#272733] text-white"
+              className={`p-2 rounded-xl border liquid-logo-tile cursor-pointer ${
+                theme === "light" ? "text-zinc-900" : "text-white"
               }`}
             >
               <X className="w-5 h-5" />
@@ -260,7 +240,7 @@ export const Navbar: React.FC = () => {
           </div>
 
           {/* Mobile Links List */}
-          <div className="flex-1 overflow-y-auto p-6 space-y-2">
+          <div className="flex-1 overflow-y-auto p-6 space-y-2.5">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
@@ -268,18 +248,16 @@ export const Navbar: React.FC = () => {
                   key={link.href}
                   to={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`flex items-center justify-between px-4 py-3 rounded-xl text-base font-medium transition-colors ${
+                  className={`flex items-center justify-between px-4 py-3 rounded-xl text-base font-semibold transition-all duration-200 ${
                     isActive
-                      ? theme === "light"
-                        ? "bg-white text-[#855806] border border-[#d4af37]/40 font-bold shadow-sm"
-                        : "bg-[#181822] text-[#d4af37] border border-[#d4af37]/30 font-bold"
+                      ? "liquid-active-tab shadow-md"
                       : theme === "light"
                       ? "text-zinc-700 hover:bg-black/5 hover:text-zinc-900"
-                      : "text-[#d4d4d8] hover:bg-white/5 hover:text-white"
+                      : "text-zinc-300 hover:bg-white/5 hover:text-white"
                   }`}
                 >
                   <span>{link.title}</span>
-                  {isActive && <span className="w-2 h-2 rounded-full bg-[#d4af37]" />}
+                  {isActive && <span className="w-2 h-2 rounded-full bg-black/80" />}
                 </Link>
               );
             })}
@@ -301,10 +279,10 @@ export const Navbar: React.FC = () => {
 
           {/* Mobile Drawer Footer Socials */}
           <div
-            className={`p-6 border-t flex items-center justify-around ${
+            className={`p-5 border-t flex items-center justify-around ${
               theme === "light"
-                ? "border-[#ded7c8] bg-[#ede8db] text-zinc-800"
-                : "border-[#22222e] bg-[#0c0c10] text-[#d4d4d8]"
+                ? "border-[#d4af37]/20 bg-black/5 text-zinc-800"
+                : "border-white/10 bg-black/40 text-zinc-300"
             }`}
           >
             <a
@@ -314,7 +292,7 @@ export const Navbar: React.FC = () => {
               className={`flex items-center gap-2 text-xs font-semibold ${
                 theme === "light"
                   ? "text-zinc-800 hover:text-[#855806]"
-                  : "text-[#d4d4d8] hover:text-[#d4af37]"
+                  : "text-zinc-300 hover:text-[#d4af37]"
               }`}
               title="Official Instagram @ji_abhishek_ji_"
             >
@@ -328,7 +306,7 @@ export const Navbar: React.FC = () => {
               className={`flex items-center gap-2 text-xs font-semibold ${
                 theme === "light"
                   ? "text-zinc-800 hover:text-[#855806]"
-                  : "text-[#d4d4d8] hover:text-[#d4af37]"
+                  : "text-zinc-300 hover:text-[#d4af37]"
               }`}
               title="Official YouTube @ji_abhishek_ji_"
             >

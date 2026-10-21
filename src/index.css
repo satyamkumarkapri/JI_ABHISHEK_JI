@@ -122,11 +122,122 @@ textarea,
   box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
 }
 
-.glass-nav {
-  background: rgba(9, 9, 11, 0.82);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+/* ==========================================================================
+   Liquid Glass Effect (Apple-grade iOS/macOS Frosted Glassmorphism)
+   ========================================================================== */
+.liquid-glass-header {
+  backdrop-filter: blur(28px) saturate(210%);
+  -webkit-backdrop-filter: blur(28px) saturate(210%);
+  transition: background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease, padding 0.3s ease;
+}
+
+html[data-theme="light"] .liquid-glass-header,
+html.light .liquid-glass-header {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.82) 0%, rgba(247, 245, 239, 0.72) 100%) !important;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.22) !important;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05), inset 0 1px 0 0 rgba(255, 255, 255, 0.85) !important;
+}
+
+html[data-theme="dark"] .liquid-glass-header,
+html.dark .liquid-glass-header,
+html:not([data-theme="light"]) .liquid-glass-header {
+  background: linear-gradient(180deg, rgba(14, 14, 20, 0.82) 0%, rgba(8, 8, 12, 0.75) 100%) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09) !important;
+  box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.7), inset 0 1px 0 0 rgba(255, 255, 255, 0.12) !important;
+}
+
+/* Scrolled state intensifies blur and shadow */
+.liquid-glass-header.scrolled {
+  backdrop-filter: blur(36px) saturate(220%);
+  -webkit-backdrop-filter: blur(36px) saturate(220%);
+}
+
+html[data-theme="light"] .liquid-glass-header.scrolled,
+html.light .liquid-glass-header.scrolled {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94) 0%, rgba(247, 245, 239, 0.88) 100%) !important;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.35) !important;
+  box-shadow: 0 14px 40px -8px rgba(0, 0, 0, 0.09), inset 0 1px 0 0 rgba(255, 255, 255, 0.95) !important;
+}
+
+html[data-theme="dark"] .liquid-glass-header.scrolled,
+html.dark .liquid-glass-header.scrolled,
+html:not([data-theme="light"]) .liquid-glass-header.scrolled {
+  background: linear-gradient(180deg, rgba(12, 12, 18, 0.92) 0%, rgba(7, 7, 10, 0.88) 100%) !important;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.22) !important;
+  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.85), inset 0 1px 0 0 rgba(255, 255, 255, 0.14) !important;
+}
+
+/* Liquid Glass Capsule (Center Navigation Links Pill) */
+.liquid-glass-capsule {
+  backdrop-filter: blur(24px) saturate(200%);
+  -webkit-backdrop-filter: blur(24px) saturate(200%);
+  transition: all 0.3s ease;
+}
+
+html[data-theme="light"] .liquid-glass-capsule,
+html.light .liquid-glass-capsule {
+  background: rgba(255, 255, 255, 0.72) !important;
+  border: 1px solid rgba(212, 175, 55, 0.28) !important;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05), inset 0 1px 1px 0 rgba(255, 255, 255, 0.95) !important;
+}
+
+html[data-theme="dark"] .liquid-glass-capsule,
+html.dark .liquid-glass-capsule,
+html:not([data-theme="light"]) .liquid-glass-capsule {
+  background: rgba(22, 22, 32, 0.65) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.12) !important;
+}
+
+/* Liquid Glass Active Tab (Gleaming Gold Sheen) */
+.liquid-active-tab {
+  background: linear-gradient(135deg, #e5c158 0%, #d4af37 50%, #b8860b 100%) !important;
+  color: #0b0b0f !important;
+  font-weight: 700 !important;
+  box-shadow: 0 3px 14px rgba(212, 175, 55, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Liquid Glass Logo Tile */
+.liquid-logo-tile {
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  transition: all 0.3s ease;
+}
+
+html[data-theme="light"] .liquid-logo-tile,
+html.light .liquid-logo-tile {
+  background: rgba(255, 255, 255, 0.85) !important;
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05), inset 0 1px 1px rgba(255, 255, 255, 0.9) !important;
+}
+
+html[data-theme="dark"] .liquid-logo-tile,
+html.dark .liquid-logo-tile,
+html:not([data-theme="light"]) .liquid-logo-tile {
+  background: rgba(20, 20, 30, 0.75) !important;
+  border: 1px solid rgba(212, 175, 55, 0.35) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
+}
+
+/* Liquid Glass Mobile Drawer */
+.liquid-glass-drawer {
+  backdrop-filter: blur(32px) saturate(200%);
+  -webkit-backdrop-filter: blur(32px) saturate(200%);
+}
+
+html[data-theme="light"] .liquid-glass-drawer,
+html.light .liquid-glass-drawer {
+  background: rgba(247, 245, 239, 0.94) !important;
+  border-left: 1px solid rgba(212, 175, 55, 0.25) !important;
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.1) !important;
+}
+
+html[data-theme="dark"] .liquid-glass-drawer,
+html.dark .liquid-glass-drawer,
+html:not([data-theme="light"]) .liquid-glass-drawer {
+  background: rgba(9, 9, 13, 0.95) !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: -15px 0 50px rgba(0, 0, 0, 0.8) !important;
 }
 
 /* Subtle Film Grain Noise Texture */
