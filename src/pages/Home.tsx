@@ -255,58 +255,58 @@ export const Home: React.FC = () => {
             description="Official and verified digital channels where fresh sketches, behind-the-scenes moments, and daily comedy are published."
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 max-w-7xl mx-auto">
             {socialChannels.map((channel) => (
               <div
                 key={channel.handle}
-                className="p-7 sm:p-8 rounded-2xl bg-[#121218] border border-[#272733] hover:border-[#d4af37]/50 transition-all duration-300 text-left space-y-5 flex flex-col justify-between shadow-xl"
+                className="p-5 sm:p-6 rounded-2xl bg-[#121218] border border-[#272733] hover:border-[#d4af37]/50 transition-all duration-300 text-left space-y-4 flex flex-col justify-between shadow-xl"
               >
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <div className="w-12 h-12 rounded-xl bg-[#181824] border border-[#d4af37]/30 flex items-center justify-center text-[#d4af37]">
+                <div className="space-y-3.5">
+                  <div className="flex items-center justify-between gap-2">
+                    <div className="w-10 h-10 rounded-xl bg-[#181824] border border-[#d4af37]/30 flex items-center justify-center text-[#d4af37] shrink-0">
                       {channel.platform === "youtube" ? (
-                        <Youtube className="w-6 h-6" />
+                        <Youtube className="w-5 h-5" />
                       ) : (
-                        <Instagram className="w-6 h-6" />
+                        <Instagram className="w-5 h-5" />
                       )}
                     </div>
-                    <span className="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold flex items-center gap-1">
-                      <ShieldCheck className="w-3.5 h-3.5" />
-                      {channel.badge || "Verified Channel"}
+                    <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[10px] font-semibold flex items-center gap-1 shrink-0">
+                      <ShieldCheck className="w-3 h-3" />
+                      <span>{channel.badge || "Verified Channel"}</span>
                     </span>
                   </div>
 
                   <div>
-                    <h3 className="text-xl font-bold font-['Cinzel',serif] text-white">
+                    <h3 className="text-base sm:text-lg font-bold font-['Cinzel',serif] text-white line-clamp-1">
                       {channel.name}
                     </h3>
-                    <p className="text-xs font-mono text-[#d4af37] font-semibold mt-0.5">
+                    <p className="text-xs font-mono text-[#d4af37] font-semibold mt-0.5 truncate">
                       {channel.handle}
                     </p>
                   </div>
 
-                  <p className="text-xs sm:text-sm text-[#a1a1aa] leading-relaxed">
+                  <p className="text-xs text-[#a1a1aa] leading-relaxed line-clamp-3 min-h-[3.6rem]">
                     {channel.description}
                   </p>
 
                   {channel.verifiedMetric && (
-                    <div className="p-3.5 rounded-xl bg-[#171722] border border-[#d4af37]/30 flex items-center justify-between">
+                    <div className="p-3 rounded-xl bg-[#171722] border border-[#d4af37]/30 flex items-center justify-between gap-2">
                       <div>
-                        <span className="text-xl sm:text-2xl font-bold font-['Cinzel',serif] text-gold-gradient block">
+                        <span className="text-xl font-bold font-['Cinzel',serif] text-gold-gradient block leading-tight">
                           {channel.verifiedMetric.value}
                         </span>
-                        <span className="text-xs text-[#a1a1aa] font-medium">
+                        <span className="text-[10px] text-[#a1a1aa] font-medium block">
                           {channel.verifiedMetric.label}
                         </span>
                       </div>
-                      <span className="text-[10px] uppercase font-mono text-[#d4af37] px-2.5 py-1 rounded-full bg-black/50 border border-[#d4af37]/30">
+                      <span className="text-[9px] uppercase font-mono text-[#d4af37] px-2 py-0.5 rounded-full bg-black/50 border border-[#d4af37]/30 shrink-0">
                         {channel.verifiedMetric.source}
                       </span>
                     </div>
                   )}
                 </div>
 
-                <div className="pt-4 border-t border-[#22222e]">
+                <div className="pt-3 border-t border-[#22222e]">
                   <a
                     href={channel.url}
                     target="_blank"
@@ -315,9 +315,9 @@ export const Home: React.FC = () => {
                   >
                     <Button
                       variant={channel.platform === "youtube" ? "secondary" : "primary"}
-                      size="md"
-                      className="w-full"
-                      rightIcon={<ArrowRight className="w-4 h-4" />}
+                      size="sm"
+                      className="w-full text-xs py-2.5"
+                      rightIcon={<ArrowRight className="w-3.5 h-3.5" />}
                     >
                       {channel.primaryAction}
                     </Button>
