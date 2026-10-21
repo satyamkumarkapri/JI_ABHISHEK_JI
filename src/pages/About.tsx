@@ -19,9 +19,9 @@ import { updatePageSEO } from "../lib/seo";
 export const About: React.FC = () => {
   useEffect(() => {
     updatePageSEO({
-      title: "About JI ABHISHEK JI — Abhishek Singh Story & Philosophy",
+      title: "About Abhishek Singh (JI ABHISHEK JI) — Biography | Jii Abhishek",
       description:
-        "Learn about Abhishek Singh (JI ABHISHEK JI) — comedian, entertainer, and digital storyteller from Bihar crafting relatable desi humor in Hindi and Bhojpuri.",
+        "Biography and story of Abhishek Singh (JI ABHISHEK JI, also known as Jii Abhishek / Abhishek Jii) — comedian, entertainer, and storyteller from Bihar crafting relatable desi humor in Hindi and Bhojpuri.",
       canonicalPath: "/about",
     });
   }, []);

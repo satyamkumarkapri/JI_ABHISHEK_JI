@@ -1,6 +1,7 @@
 export interface PageSEOProps {
   title: string;
   description: string;
+  keywords?: string;
   canonicalPath?: string;
   ogType?: "website" | "profile" | "article";
   ogImage?: string;
@@ -10,6 +11,7 @@ export interface PageSEOProps {
 export function updatePageSEO({
   title,
   description,
+  keywords = "ji abhishek ji, jii abhishek, abhishek jii, ji abhishek, abhishek ji, abhishek singh, abhishek singh comedian, patna wale abhishek ji, ji_abhishek_ji_, ji abhishek ji instagram, bihar comedian abhishek singh, maa beta comedy, desi comedy reels",
   canonicalPath = "",
   ogType = "website",
   ogImage = "/images/abhishek-portrait.jpg",
@@ -18,7 +20,7 @@ export function updatePageSEO({
   const siteUrl = (import.meta.env.VITE_SITE_URL || "https://ji-abhishek-ji.vercel.app").replace(/\/$/, "");
   const fullTitle = title.includes("JI ABHISHEK JI")
     ? title
-    : `${title} | JI ABHISHEK JI — Abhishek Singh`;
+    : `${title} | JI ABHISHEK JI — Abhishek Singh (Jii Abhishek)`;
   const canonicalUrl = `${siteUrl}${canonicalPath.startsWith("/") ? canonicalPath : `/${canonicalPath}`}`;
 
   // Update title
@@ -37,6 +39,7 @@ export function updatePageSEO({
   };
 
   setMeta("description", description);
+  setMeta("keywords", keywords);
   setMeta("og:title", fullTitle, true);
   setMeta("og:description", description, true);
   setMeta("og:type", ogType, true);
@@ -68,16 +71,53 @@ export function updatePageSEO({
 
   const defaultStructuredData = {
     "@context": "https://schema.org",
-    "@type": "Person",
-    name: "Abhishek Singh",
-    alternateName: "JI ABHISHEK JI",
-    jobTitle: "Comedian and Digital Content Creator",
-    url: siteUrl,
-    sameAs: [
-      "https://www.instagram.com/ji_abhishek_ji_/",
-      "https://www.youtube.com/@ji_abhishek_ji_",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": `${siteUrl}/#person`,
+        name: "Abhishek Singh",
+        alternateName: [
+          "JI ABHISHEK JI",
+          "Ji Abhishek Ji",
+          "Jii Abhishek",
+          "Abhishek Jii",
+          "Abhishek Ji",
+          "ji_abhishek_ji_",
+          "Patna Wale Abhishek Ji"
+        ],
+        jobTitle: "Comedian & Digital Content Creator",
+        description: "Abhishek Singh, popularly known as JI ABHISHEK JI (or Jii Abhishek / Abhishek Jii), is an Indian comedian, entertainer, and storyteller from Bihar.",
+        url: siteUrl,
+        image: `${siteUrl}/images/abhishek-portrait.jpg`,
+        sameAs: [
+          "https://www.instagram.com/ji_abhishek_ji_/",
+          "https://www.youtube.com/@ji_abhishek_ji_",
+          "https://www.instagram.com/patna_wale_abhishek_ji/",
+          "https://www.instagram.com/ji_abhishek_ji_ki_mummy/",
+        ],
+        nationality: {
+          "@type": "Country",
+          name: "India",
+        },
+        knowsAbout: ["Comedy", "Digital Content Creation", "Hindi and Bhojpuri Entertainment", "Standup Comedy", "Family Sketches"],
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        url: siteUrl,
+        name: "JI ABHISHEK JI Official",
+        alternateName: [
+          "Jii Abhishek Website",
+          "Abhishek Jii Official",
+          "Ji Abhishek Official Website",
+          "ji_abhishek_ji_",
+        ],
+        publisher: {
+          "@id": `${siteUrl}/#person`,
+        },
+        inLanguage: ["en", "hi", "bho"],
+      },
     ],
-    knowsAbout: ["Comedy", "Digital Content Creation", "Hindi and Bhojpuri Entertainment"],
   };
 
   jsonLdScript.textContent = JSON.stringify(structuredData || defaultStructuredData);

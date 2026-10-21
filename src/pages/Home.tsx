@@ -21,9 +21,9 @@ import { updatePageSEO } from "../lib/seo";
 export const Home: React.FC = () => {
   useEffect(() => {
     updatePageSEO({
-      title: "JI ABHISHEK JI — Official Creator Website | Abhishek Singh",
+      title: "JI ABHISHEK JI (Abhishek Singh) — Official Website | Jii Abhishek",
       description:
-        "Welcome to the official world of JI ABHISHEK JI (Abhishek Singh) — Comedian & digital creator. Relatable desi comedy, family stories, Hindi & Bhojpuri entertainment.",
+        "Official website of JI ABHISHEK JI (Abhishek Singh, popularly searched as Jii Abhishek / Abhishek Jii / @ji_abhishek_ji_). Relatable desi comedy, sketches, family stories, and brand collaborations.",
       canonicalPath: "/",
     });
   }, []);
