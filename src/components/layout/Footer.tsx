@@ -64,48 +64,18 @@ export const Footer: React.FC = () => {
               Official digital home of Abhishek Singh. Relatable desi comedy sketches, family-oriented stories, and cultural moments from Bihar, shared with love for audiences worldwide.
             </p>
 
-            <div className="pt-2 flex flex-wrap items-center gap-2.5">
+            <div className="pt-2 flex items-center gap-3">
               <a
                 href={siteConfig.socials.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Instagram Main Profile"
+                aria-label="Official Instagram Profile"
                 className={`w-9 h-9 rounded-full flex items-center justify-center transition-colors ${
                   theme === "light"
                     ? "bg-white border border-[#ded7c8] text-zinc-700 hover:text-[#855806] hover:border-[#855806]"
                     : "bg-[#121218] border border-[#272733] text-[#d4d4d8] hover:text-[#d4af37] hover:border-[#d4af37]/60"
                 }`}
-                title="Main Instagram @ji_abhishek_ji_ (1.9M+)"
-              >
-                <Instagram className="w-4 h-4" />
-              </a>
-
-              <a
-                href={siteConfig.socials.patnaInstagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Patna Storyteller Profile"
-                className={`w-9 h-9 rounded-full flex items-center justify-center transition-colors ${
-                  theme === "light"
-                    ? "bg-white border border-[#ded7c8] text-zinc-700 hover:text-[#855806] hover:border-[#855806]"
-                    : "bg-[#121218] border border-[#272733] text-[#d4d4d8] hover:text-[#d4af37] hover:border-[#d4af37]/60"
-                }`}
-                title="Patna Storyteller @patna_wale_abhishek_ji"
-              >
-                <Instagram className="w-4 h-4" />
-              </a>
-
-              <a
-                href={siteConfig.socials.mummyInstagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Abhishek ji ki Mummy Official Profile"
-                className={`w-9 h-9 rounded-full flex items-center justify-center transition-colors ${
-                  theme === "light"
-                    ? "bg-white border border-[#ded7c8] text-zinc-700 hover:text-[#855806] hover:border-[#855806]"
-                    : "bg-[#121218] border border-[#272733] text-[#d4d4d8] hover:text-[#d4af37] hover:border-[#d4af37]/60"
-                }`}
-                title="Mummy Ji @ji_abhishek_ji_ki_mummy"
+                title="Official Instagram @ji_abhishek_ji_ (1.9M+)"
               >
                 <Instagram className="w-4 h-4" />
               </a>
@@ -114,13 +84,13 @@ export const Footer: React.FC = () => {
                 href={siteConfig.socials.youtube}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="YouTube Channel"
+                aria-label="Official YouTube Channel"
                 className={`w-9 h-9 rounded-full flex items-center justify-center transition-colors ${
                   theme === "light"
                     ? "bg-white border border-[#ded7c8] text-zinc-700 hover:text-[#855806] hover:border-[#855806]"
                     : "bg-[#121218] border border-[#272733] text-[#d4d4d8] hover:text-[#d4af37] hover:border-[#d4af37]/60"
                 }`}
-                title="YouTube @ji_abhishek_ji_ (1.3M+)"
+                title="Official YouTube @ji_abhishek_ji_ (1.3M+)"
               >
                 <Youtube className="w-4 h-4" />
               </a>
@@ -133,7 +103,7 @@ export const Footer: React.FC = () => {
                     ? "bg-white border border-[#ded7c8] text-zinc-700 hover:text-[#855806] hover:border-[#855806]"
                     : "bg-[#121218] border border-[#272733] text-[#d4d4d8] hover:text-[#d4af37] hover:border-[#d4af37]/60"
                 }`}
-                title="Contact Forms"
+                title="Contact Hub"
               >
                 <Mail className="w-4 h-4" />
               </Link>

@@ -311,54 +311,26 @@ export const Navbar: React.FC = () => {
               href={siteConfig.socials.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className={`flex items-center gap-1.5 text-xs font-semibold ${
+              className={`flex items-center gap-2 text-xs font-semibold ${
                 theme === "light"
                   ? "text-zinc-800 hover:text-[#855806]"
                   : "text-[#d4d4d8] hover:text-[#d4af37]"
               }`}
-              title="Main Instagram @ji_abhishek_ji_"
+              title="Official Instagram @ji_abhishek_ji_"
             >
               <Instagram className={`w-4 h-4 ${theme === "light" ? "text-[#855806]" : "text-[#d4af37]"}`} />
               Instagram
             </a>
             <a
-              href={siteConfig.socials.patnaInstagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`flex items-center gap-1.5 text-xs font-semibold ${
-                theme === "light"
-                  ? "text-zinc-800 hover:text-[#855806]"
-                  : "text-[#d4d4d8] hover:text-[#d4af37]"
-              }`}
-              title="Patna Storyteller"
-            >
-              <Instagram className={`w-4 h-4 ${theme === "light" ? "text-[#855806]" : "text-[#d4af37]"}`} />
-              Patna
-            </a>
-            <a
-              href={siteConfig.socials.mummyInstagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`flex items-center gap-1.5 text-xs font-semibold ${
-                theme === "light"
-                  ? "text-zinc-800 hover:text-[#855806]"
-                  : "text-[#d4d4d8] hover:text-[#d4af37]"
-              }`}
-              title="Mummy Ji"
-            >
-              <Instagram className={`w-4 h-4 ${theme === "light" ? "text-[#855806]" : "text-[#d4af37]"}`} />
-              Mummy Ji
-            </a>
-            <a
               href={siteConfig.socials.youtube}
               target="_blank"
               rel="noopener noreferrer"
-              className={`flex items-center gap-1.5 text-xs font-semibold ${
+              className={`flex items-center gap-2 text-xs font-semibold ${
                 theme === "light"
                   ? "text-zinc-800 hover:text-[#855806]"
                   : "text-[#d4d4d8] hover:text-[#d4af37]"
               }`}
-              title="YouTube"
+              title="Official YouTube @ji_abhishek_ji_"
             >
               <Youtube className={`w-4 h-4 ${theme === "light" ? "text-[#855806]" : "text-[#d4af37]"}`} />
               YouTube
