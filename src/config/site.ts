@@ -76,7 +76,7 @@ export const siteConfig: SiteConfig = {
     youtube: "https://www.youtube.com/@ji_abhishek_ji_",
     patnaInstagram: "https://www.instagram.com/patna_wale_abhishek_ji/",
     mummyInstagram: "https://www.instagram.com/ji_abhishek_ji_ki_mummy/",
-    publicEmail: import.meta.env.VITE_PUBLIC_CONTACT_EMAIL || undefined,
+    publicEmail: import.meta.env.VITE_PUBLIC_CONTACT_EMAIL || "jiabhishekjibusiness@gmail.com",
   },
   formspree: {
     fanId: import.meta.env.VITE_FORMSPREE_FAN_ID || "",

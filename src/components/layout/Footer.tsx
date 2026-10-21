@@ -95,18 +95,18 @@ export const Footer: React.FC = () => {
                 <Youtube className="w-4 h-4" />
               </a>
 
-              <Link
-                to="/contact"
-                aria-label="Contact Hub"
+              <a
+                href={`mailto:${siteConfig.socials.publicEmail}`}
+                aria-label="Official Business Email"
                 className={`w-9 h-9 rounded-full flex items-center justify-center transition-colors ${
                   theme === "light"
                     ? "bg-white border border-[#ded7c8] text-zinc-700 hover:text-[#855806] hover:border-[#855806]"
                     : "bg-[#121218] border border-[#272733] text-[#d4d4d8] hover:text-[#d4af37] hover:border-[#d4af37]/60"
                 }`}
-                title="Contact Hub"
+                title={`Official Email: ${siteConfig.socials.publicEmail}`}
               >
                 <Mail className="w-4 h-4" />
-              </Link>
+              </a>
             </div>
           </div>
 
@@ -161,6 +161,22 @@ export const Footer: React.FC = () => {
                   </Link>
                 </li>
               ))}
+              {siteConfig.socials.publicEmail && (
+                <li>
+                  <a
+                    href={`mailto:${siteConfig.socials.publicEmail}`}
+                    className={`inline-flex items-center gap-1.5 transition-colors duration-150 font-medium ${
+                      theme === "light"
+                        ? "text-[#855806] hover:underline"
+                        : "text-[#d4af37] hover:underline"
+                    }`}
+                    title="Direct Business Inquiries"
+                  >
+                    <Mail className="w-3.5 h-3.5 shrink-0" />
+                    <span>Email Business</span>
+                  </a>
+                </li>
+              )}
             </ul>
           </div>
 
